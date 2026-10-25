@@ -1,0 +1,262 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 620" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bpBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#080e1b"/>
+      <stop offset="50%" stop-color="#0c1626"/>
+      <stop offset="100%" stop-color="#070c17"/>
+    </linearGradient>
+
+    <!-- Glowing Line Gradients -->
+    <linearGradient id="connHubSpoke" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0284c7"/>
+      <stop offset="50%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#818cf8"/>
+    </linearGradient>
+
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#fbbf24"/>
+      <stop offset="100%" stop-color="#f59e0b"/>
+    </linearGradient>
+
+    <linearGradient id="greenGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#34d399"/>
+      <stop offset="100%" stop-color="#059669"/>
+    </linearGradient>
+
+    <linearGradient id="purpleGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#c084fc"/>
+      <stop offset="100%" stop-color="#7c3aed"/>
+    </linearGradient>
+
+    <!-- Grid Pattern -->
+    <pattern id="diagGrid" width="28" height="28" patternUnits="userSpaceOnUse">
+      <path d="M 28 0 L 0 0 0 28" fill="none" stroke="#38bdf8" stroke-width="0.5" stroke-opacity="0.05"/>
+    </pattern>
+
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+
+  <style>
+    .bp-title { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-weight: 700; fill: #f8fafc; }
+    .bp-sub { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-weight: 500; fill: #94a3b8; }
+    .bp-box-title { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-weight: 600; font-size: 13px; }
+    .bp-badge { font-family: 'Consolas', monospace; font-size: 11px; font-weight: 600; }
+    .bp-label { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 11.5px; fill: #cbd5e1; }
+    .bp-mono { font-family: 'Consolas', monospace; font-size: 10.5px; fill: #38bdf8; }
+  </style>
+
+  <!-- Container -->
+  <rect x="2" y="2" width="1096" height="616" rx="16" fill="url(#bpBg)" stroke="#1e293b" stroke-width="1.5"/>
+  <rect x="2" y="2" width="1096" height="616" rx="16" fill="url(#diagGrid)"/>
+
+  <!-- Header Banner -->
+  <g transform="translate(35, 26)">
+    <circle cx="10" cy="10" r="4" fill="#00f2fe"/>
+    <text x="24" y="15" class="bp-title" font-size="18" letter-spacing="1">ENTERPRISE AZURE CLOUD ARCHITECTURE BLUEPRINT</text>
+    <text x="24" y="34" class="bp-sub" font-size="12">CAF Landing Zones &#x2022; Hub &amp; Spoke Zero-Trust &#x2022; Terraform DevSecOps &#x2022; Multi-Region DR</text>
+  </g>
+
+  <!-- Section 1: Tenant & Management Group Hierarchy (Top Bar) -->
+  <g transform="translate(35, 78)">
+    <!-- Root Container -->
+    <rect width="1030" height="120" rx="12" fill="#0b1322" stroke="#1e3a5f" stroke-width="1.2" filter="url(#shadow)"/>
+    <rect x="16" y="-10" width="280" height="20" rx="5" fill="#0284c7"/>
+    <text x="26" y="4" class="bp-title" font-size="10.5" letter-spacing="1">TENANT ROOT GROUP: MICROSOFT ENTRA ID</text>
+
+    <!-- Sub MG 1: Platform MG -->
+    <g transform="translate(24, 24)">
+      <rect width="230" height="78" rx="8" fill="#0f1f38" stroke="#0284c7" stroke-width="1"/>
+      <text x="14" y="22" class="bp-box-title" fill="#38bdf8">Platform MG</text>
+      <text x="14" y="40" class="bp-label">&#x2022; Connectivity Sub (Hub / ER)</text>
+      <text x="14" y="56" class="bp-label">&#x2022; Identity Sub (Entra DS / PIM)</text>
+      <text x="14" y="72" class="bp-label">&#x2022; Management Sub (Log Analytics)</text>
+    </g>
+
+    <!-- Sub MG 2: Landing Zones MG -->
+    <g transform="translate(275, 24)">
+      <rect width="250" height="78" rx="8" fill="#0f1f38" stroke="#10b981" stroke-width="1"/>
+      <text x="14" y="22" class="bp-box-title" fill="#34d399">Landing Zones MG</text>
+      <text x="14" y="40" class="bp-label">&#x2022; Corp Workloads (Private Only)</text>
+      <text x="14" y="56" class="bp-label">&#x2022; Online Workloads (App Gateway / WAF)</text>
+      <text x="14" y="72" class="bp-label">&#x2022; Dev / UAT / Prod Segmented</text>
+    </g>
+
+    <!-- Sub MG 3: Sandboxes MG -->
+    <g transform="translate(545, 24)">
+      <rect width="220" height="78" rx="8" fill="#0f1f38" stroke="#f59e0b" stroke-width="1"/>
+      <text x="14" y="22" class="bp-box-title" fill="#fbbf24">Sandbox MG</text>
+      <text x="14" y="40" class="bp-label">&#x2022; R&amp;D Subscriptions</text>
+      <text x="14" y="56" class="bp-label">&#x2022; Hard Budget Spending Caps</text>
+      <text x="14" y="72" class="bp-label">&#x2022; Auto-cleanup / Ephemeral</text>
+    </g>
+
+    <!-- Sub MG 4: Governance & Policies -->
+    <g transform="translate(785, 24)">
+      <rect width="220" height="78" rx="8" fill="#0f1f38" stroke="#8b5cf6" stroke-width="1"/>
+      <text x="14" y="22" class="bp-box-title" fill="#c084fc">Governance &amp; Policy</text>
+      <text x="14" y="40" class="bp-label">&#x2022; Azure Policy &amp; Initiatives</text>
+      <text x="14" y="56" class="bp-label">&#x2022; RBAC &amp; Least Privilege</text>
+      <text x="14" y="72" class="bp-label">&#x2022; Defender for Cloud &amp; Audits</text>
+    </g>
+  </g>
+
+  <!-- Section 2: Hub & Spoke Networking (Middle) -->
+  <g transform="translate(35, 222)">
+    <!-- Container -->
+    <rect width="1030" height="210" rx="12" fill="#0b1322" stroke="#1e3a5f" stroke-width="1.2" filter="url(#shadow)"/>
+    <rect x="16" y="-10" width="280" height="20" rx="5" fill="#059669"/>
+    <text x="26" y="4" class="bp-title" font-size="10.5" letter-spacing="1">ZERO-TRUST HUB &amp; SPOKE NETWORK TOPOLOGY</text>
+
+    <!-- On-Prem / Hybrid Ingress -->
+    <g transform="translate(24, 30)">
+      <rect width="180" height="150" rx="8" fill="#0d1b2f" stroke="#334155" stroke-width="1"/>
+      <text x="16" y="28" class="bp-box-title" fill="#93c5fd">On-Premises / Branch</text>
+      <text x="16" y="50" class="bp-mono">CIDR Assessment</text>
+      <text x="16" y="72" class="bp-label">&#x2022; ExpressRoute 10Gbps</text>
+      <text x="16" y="92" class="bp-label">&#x2022; S2S VPN Failover</text>
+      <text x="16" y="112" class="bp-label">&#x2022; Non-overlapping IP</text>
+      <text x="16" y="132" class="bp-label">&#x2022; BGP Route Tables</text>
+    </g>
+
+    <!-- Connecting arrow to Hub -->
+    <path d="M 204 105 L 244 105" stroke="#38bdf8" stroke-width="2.5" stroke-dasharray="4 4"/>
+    <polygon points="244,101 252,105 244,109" fill="#38bdf8"/>
+
+    <!-- Central Hub VNet -->
+    <g transform="translate(254, 20)">
+      <rect width="270" height="170" rx="10" fill="#0d243f" stroke="#0284c7" stroke-width="1.5"/>
+      <text x="16" y="26" class="bp-box-title" fill="#38bdf8">CENTRAL HUB VNET (10.0.0.0/16)</text>
+
+      <rect x="14" y="38" width="242" height="34" rx="6" fill="#091b30" stroke="#0369a1" stroke-width="1"/>
+      <text x="24" y="58" class="bp-label" font-weight="600" fill="#f8fafc">Azure Firewall / NVA</text>
+      <text x="156" y="58" class="bp-mono">UDR 0.0.0.0/0</text>
+
+      <rect x="14" y="80" width="242" height="34" rx="6" fill="#091b30" stroke="#0369a1" stroke-width="1"/>
+      <text x="24" y="100" class="bp-label" font-weight="600" fill="#f8fafc">VPN &amp; ExpressRoute GW</text>
+      <text x="180" y="100" class="bp-mono">Active-Act</text>
+
+      <rect x="14" y="122" width="242" height="34" rx="6" fill="#091b30" stroke="#0369a1" stroke-width="1"/>
+      <text x="24" y="142" class="bp-label" font-weight="600" fill="#f8fafc">Azure Bastion &amp; DNS</text>
+      <text x="162" y="142" class="bp-mono">Private DNS</text>
+    </g>
+
+    <!-- Peering Connections -->
+    <path d="M 524 75 L 565 65" stroke="#38bdf8" stroke-width="2"/>
+    <path d="M 524 105 L 565 105" stroke="#38bdf8" stroke-width="2"/>
+    <path d="M 524 135 L 565 145" stroke="#38bdf8" stroke-width="2"/>
+
+    <!-- Spoke 1: Application Spoke -->
+    <g transform="translate(565, 20)">
+      <rect width="215" height="50" rx="8" fill="#0f2b38" stroke="#059669" stroke-width="1"/>
+      <text x="14" y="22" class="bp-box-title" fill="#34d399">Spoke 1: App Services</text>
+      <text x="14" y="38" class="bp-mono">10.1.0.0/20 &#x2022; VNet Peering</text>
+    </g>
+
+    <!-- Spoke 2: AKS Cluster Spoke -->
+    <g transform="translate(565, 80)">
+      <rect width="215" height="50" rx="8" fill="#0f2b38" stroke="#059669" stroke-width="1"/>
+      <text x="14" y="22" class="bp-box-title" fill="#34d399">Spoke 2: AKS &amp; Microservices</text>
+      <text x="14" y="38" class="bp-mono">10.2.0.0/20 &#x2022; Azure CNI</text>
+    </g>
+
+    <!-- Spoke 3: Data Tier Spoke -->
+    <g transform="translate(565, 140)">
+      <rect width="215" height="50" rx="8" fill="#0f2b38" stroke="#059669" stroke-width="1"/>
+      <text x="14" y="22" class="bp-box-title" fill="#34d399">Spoke 3: Private Data Tier</text>
+      <text x="14" y="38" class="bp-mono">10.3.0.0/20 &#x2022; Private Endpoints</text>
+    </g>
+
+    <!-- Right Box: Security & Inspection Layer -->
+    <g transform="translate(805, 20)">
+      <rect width="200" height="170" rx="8" fill="#181329" stroke="#7c3aed" stroke-width="1.2"/>
+      <text x="14" y="26" class="bp-box-title" fill="#c084fc">Controlled Egress &amp; Sec</text>
+      <text x="14" y="48" class="bp-label">&#x2022; Centralized Inspection</text>
+      <text x="14" y="68" class="bp-label">&#x2022; Forced Tunneling to NVA</text>
+      <text x="14" y="88" class="bp-label">&#x2022; FQDN &amp; TLS Inspection</text>
+      <text x="14" y="108" class="bp-label">&#x2022; Private Link / Endpoints</text>
+      <text x="14" y="128" class="bp-label">&#x2022; NSG Flow Logs &amp; SIEM</text>
+      <text x="14" y="148" class="bp-label">&#x2022; Zero Public IP on VMs</text>
+    </g>
+  </g>
+
+  <!-- Section 3: DevSecOps & Migration Lifecycle (Bottom) -->
+  <g transform="translate(35, 452)">
+    <rect width="1030" height="142" rx="12" fill="#0b1322" stroke="#1e3a5f" stroke-width="1.2" filter="url(#shadow)"/>
+    <rect x="16" y="-10" width="310" height="20" rx="5" fill="#7c3aed"/>
+    <text x="26" y="4" class="bp-title" font-size="10.5" letter-spacing="1">DEVSECOPS PIPELINE &amp; MIGRATION LIFECYCLE</text>
+
+    <!-- Pipeline Step 1 -->
+    <g transform="translate(24, 24)">
+      <rect width="175" height="96" rx="8" fill="#131c31" stroke="#334155" stroke-width="1"/>
+      <rect x="10" y="10" width="24" height="24" rx="4" fill="#0284c7"/>
+      <text x="17" y="26" class="bp-title" font-size="12">1</text>
+      <text x="42" y="26" class="bp-box-title" fill="#f8fafc">Azure Repos</text>
+      <text x="12" y="52" class="bp-label">&#x2022; Trunk-Based Flow</text>
+      <text x="12" y="70" class="bp-label">&#x2022; PR Mandatory / Review</text>
+      <text x="12" y="88" class="bp-label">&#x2022; No-Delete Main Policy</text>
+    </g>
+
+    <!-- Arrow -->
+    <path d="M 205 72 L 225 72" stroke="#38bdf8" stroke-width="2"/>
+    <polygon points="225,68 231,72 225,76" fill="#38bdf8"/>
+
+    <!-- Pipeline Step 2 -->
+    <g transform="translate(233, 24)">
+      <rect width="175" height="96" rx="8" fill="#131c31" stroke="#334155" stroke-width="1"/>
+      <rect x="10" y="10" width="24" height="24" rx="4" fill="#7c3aed"/>
+      <text x="17" y="26" class="bp-title" font-size="12">2</text>
+      <text x="42" y="26" class="bp-box-title" fill="#f8fafc">Security Scan</text>
+      <text x="12" y="52" class="bp-label">&#x2022; TFLint &amp; Secret Scan</text>
+      <text x="12" y="70" class="bp-label">&#x2022; Checkov CIS Benchmarks</text>
+      <text x="12" y="88" class="bp-label">&#x2022; Infracost Estimate</text>
+    </g>
+
+    <!-- Arrow -->
+    <path d="M 414 72 L 434 72" stroke="#38bdf8" stroke-width="2"/>
+    <polygon points="434,68 440,72 434,76" fill="#38bdf8"/>
+
+    <!-- Pipeline Step 3 -->
+    <g transform="translate(442, 24)">
+      <rect width="175" height="96" rx="8" fill="#131c31" stroke="#334155" stroke-width="1"/>
+      <rect x="10" y="10" width="24" height="24" rx="4" fill="#f59e0b"/>
+      <text x="17" y="26" class="bp-title" font-size="12">3</text>
+      <text x="42" y="26" class="bp-box-title" fill="#f8fafc">Plan &amp; Approval</text>
+      <text x="12" y="52" class="bp-label">&#x2022; Terraform Remote State</text>
+      <text x="12" y="70" class="bp-label">&#x2022; Manual Approval Gate</text>
+      <text x="12" y="88" class="bp-label">&#x2022; Impact Verification</text>
+    </g>
+
+    <!-- Arrow -->
+    <path d="M 623 72 L 643 72" stroke="#38bdf8" stroke-width="2"/>
+    <polygon points="643,68 649,72 643,76" fill="#38bdf8"/>
+
+    <!-- Pipeline Step 4 -->
+    <g transform="translate(651, 24)">
+      <rect width="175" height="96" rx="8" fill="#131c31" stroke="#334155" stroke-width="1"/>
+      <rect x="10" y="10" width="24" height="24" rx="4" fill="#059669"/>
+      <text x="17" y="26" class="bp-title" font-size="12">4</text>
+      <text x="42" y="26" class="bp-box-title" fill="#f8fafc">Apply &amp; Rollback</text>
+      <text x="12" y="52" class="bp-label">&#x2022; Zero-Downtime Apply</text>
+      <text x="12" y="70" class="bp-label">&#x2022; Reusable YAML Templates</text>
+      <text x="12" y="88" class="bp-label">&#x2022; Automated Rollback Script</text>
+    </g>
+
+    <!-- Arrow -->
+    <path d="M 832 72 L 852 72" stroke="#38bdf8" stroke-width="2"/>
+    <polygon points="852,68 858,72 852,76" fill="#38bdf8"/>
+
+    <!-- Pipeline Step 5 -->
+    <g transform="translate(860, 24)">
+      <rect width="145" height="96" rx="8" fill="#131c31" stroke="#38bdf8" stroke-width="1"/>
+      <rect x="10" y="10" width="24" height="24" rx="4" fill="#0284c7"/>
+      <text x="17" y="26" class="bp-title" font-size="12">5</text>
+      <text x="42" y="26" class="bp-box-title" fill="#f8fafc">Drift &amp; Ops</text>
+      <text x="12" y="52" class="bp-label">&#x2022; Scheduled Drift</text>
+      <text x="12" y="70" class="bp-label">&#x2022; FinOps Cleanup</text>
+      <text x="12" y="88" class="bp-label">&#x2022; Azure Monitor</text>
+    </g>
+  </g>
+</svg>

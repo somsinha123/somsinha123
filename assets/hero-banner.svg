@@ -1,0 +1,173 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 420" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#060b14"/>
+      <stop offset="50%" stop-color="#0a1628"/>
+      <stop offset="100%" stop-color="#050910"/>
+    </linearGradient>
+
+    <!-- Radial Glows -->
+    <radialGradient id="glowCyan" cx="85%" cy="15%" r="50%">
+      <stop offset="0%" stop-color="#0078D4" stop-opacity="0.38"/>
+      <stop offset="60%" stop-color="#00d2ff" stop-opacity="0.10"/>
+      <stop offset="100%" stop-color="#0078D4" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowPurple" cx="15%" cy="85%" r="55%">
+      <stop offset="0%" stop-color="#7928CA" stop-opacity="0.32"/>
+      <stop offset="60%" stop-color="#9333ea" stop-opacity="0.09"/>
+      <stop offset="100%" stop-color="#7928CA" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Metallic Gradient for Header Text -->
+    <linearGradient id="titleGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="30%" stop-color="#e0f2fe"/>
+      <stop offset="70%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#818cf8"/>
+    </linearGradient>
+
+    <!-- Border Stroke Gradient -->
+    <linearGradient id="borderGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00d2ff" stop-opacity="0.6"/>
+      <stop offset="50%" stop-color="#6366f1" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#a855f7" stop-opacity="0.5"/>
+    </linearGradient>
+
+    <!-- Bottom Accent Line -->
+    <linearGradient id="accentLine" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0078D4"/>
+      <stop offset="25%" stop-color="#00f2fe"/>
+      <stop offset="70%" stop-color="#7928CA"/>
+      <stop offset="100%" stop-color="#ec4899"/>
+    </linearGradient>
+
+    <!-- Subtle Technical Grid Pattern -->
+    <pattern id="cyberGrid" width="36" height="36" patternUnits="userSpaceOnUse">
+      <path d="M 36 0 L 0 0 0 36" fill="none" stroke="#38bdf8" stroke-width="0.6" stroke-opacity="0.07"/>
+      <circle cx="36" cy="0" r="1" fill="#38bdf8" fill-opacity="0.18"/>
+    </pattern>
+
+    <!-- Soft Glow Filter -->
+    <filter id="glowFilter" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <style>
+    .font-heavy { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', sans-serif; font-weight: 800; }
+    .font-semibold { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', sans-serif; font-weight: 600; }
+    .font-regular { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', sans-serif; font-weight: 400; }
+    .font-mono { font-family: 'Consolas', 'Fira Code', 'SF Mono', monospace; }
+  </style>
+
+  <!-- Background Base with Rounded Corners -->
+  <rect x="3" y="3" width="1194" height="414" rx="22" fill="url(#bgGrad)" stroke="url(#borderGrad)" stroke-width="1.5"/>
+  <rect x="3" y="3" width="1194" height="414" rx="22" fill="url(#glowCyan)"/>
+  <rect x="3" y="3" width="1194" height="414" rx="22" fill="url(#glowPurple)"/>
+  <rect x="3" y="3" width="1194" height="414" rx="22" fill="url(#cyberGrid)"/>
+
+  <!-- Top Status Badge Pill -->
+  <g transform="translate(370, 34)">
+    <rect x="0" y="0" width="460" height="34" rx="17" fill="#0369a1" fill-opacity="0.2" stroke="#38bdf8" stroke-width="1.2" stroke-opacity="0.6"/>
+    <circle cx="20" cy="17" r="5" fill="#22d3ee" filter="url(#glowFilter)"/>
+    <circle cx="20" cy="17" r="3.5" fill="#34d399"/>
+    <text x="36" y="22" fill="#38bdf8" class="font-semibold" font-size="12" letter-spacing="2">ENTERPRISE CLOUD ARCHITECTURE &amp; DEVSECOPS</text>
+  </g>
+
+  <!-- Main Name Title -->
+  <text x="600" y="132" text-anchor="middle" fill="url(#titleGrad)" class="font-heavy" font-size="56" letter-spacing="4" filter="url(#glowFilter)">SOMJIT SINHA</text>
+  <text x="600" y="132" text-anchor="middle" fill="url(#titleGrad)" class="font-heavy" font-size="56" letter-spacing="4">SOMJIT SINHA</text>
+
+  <!-- Subtitle Line -->
+  <text x="600" y="174" text-anchor="middle" class="font-semibold" font-size="19" letter-spacing="0.6">
+    <tspan fill="#f8fafc">Enterprise Cloud Architect</tspan>
+    <tspan fill="#0284c7">  &#x2022;  </tspan>
+    <tspan fill="#f8fafc">DevSecOps &amp; Landing Zones</tspan>
+    <tspan fill="#0284c7">  &#x2022;  </tspan>
+    <tspan fill="#f8fafc">FinOps &amp; Governance</tspan>
+  </text>
+
+  <!-- Brief Description -->
+  <text x="600" y="204" text-anchor="middle" class="font-regular" font-size="14.5" fill="#94a3b8" letter-spacing="0.3">
+    Architecting 100+ Workload Migrations &#x2022; Modular Terraform Landing Zones &#x2022; Zero-Trust Azure Hub-Spoke &#x2022; Techno-Functional Delivery
+  </text>
+
+  <!-- Capability Cards: Row 1 -->
+  <!-- Card 1: Azure CAF Landing Zones -->
+  <g transform="translate(80, 240)">
+    <rect width="325" height="58" rx="12" fill="#0c1424" fill-opacity="0.9" stroke="#1e293b" stroke-width="1.2"/>
+    <rect width="325" height="58" rx="12" fill="none" stroke="#0284c7" stroke-width="1" stroke-opacity="0.4"/>
+    <!-- Cloud Icon -->
+    <g transform="translate(16, 17)">
+      <path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96z" fill="#38bdf8"/>
+    </g>
+    <text x="56" y="26" class="font-semibold" font-size="14" fill="#f8fafc">Azure CAF Landing Zones</text>
+    <text x="56" y="45" class="font-regular" font-size="11.5" fill="#94a3b8">Multi-Tenant &#x2022; Mgmt Groups &#x2022; Policy</text>
+  </g>
+
+  <!-- Card 2: Modular Terraform IaC -->
+  <g transform="translate(438, 240)">
+    <rect width="325" height="58" rx="12" fill="#0c1424" fill-opacity="0.9" stroke="#1e293b" stroke-width="1.2"/>
+    <rect width="325" height="58" rx="12" fill="none" stroke="#8b5cf6" stroke-width="1" stroke-opacity="0.4"/>
+    <!-- Terraform Cube Icon -->
+    <g transform="translate(16, 17)">
+      <path d="M14.5 1.5L8 5.25v7.5l6.5-3.75V1.5zm-7.5 4.33L1 2.5v7.5l6 3.46V5.83zm.5 8.08L14 17.65v-7.5l-6.5 3.76z" fill="#a78bfa"/>
+    </g>
+    <text x="56" y="26" class="font-semibold" font-size="14" fill="#f8fafc">Terraform IaC &amp; Drift Control</text>
+    <text x="56" y="45" class="font-regular" font-size="11.5" fill="#94a3b8">Remote State &#x2022; Reusable Modules</text>
+  </g>
+
+  <!-- Card 3: 100+ Enterprise Migrations -->
+  <g transform="translate(795, 240)">
+    <rect width="325" height="58" rx="12" fill="#0c1424" fill-opacity="0.9" stroke="#1e293b" stroke-width="1.2"/>
+    <rect width="325" height="58" rx="12" fill="none" stroke="#10b981" stroke-width="1" stroke-opacity="0.4"/>
+    <!-- Rocket Icon -->
+    <g transform="translate(16, 17)">
+      <path d="M12 2.5s-4 4-4 8.5c0 2.21 1.79 4 4 4s4-1.79 4-4c0-4.5-4-8.5-4-8.5zm0 10c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm-5 4.5l-3 4 4-1 1-3.5-2 .5zm10 0l-2-.5 1 3.5 4 1-3-4z" fill="#34d399"/>
+    </g>
+    <text x="56" y="26" class="font-semibold" font-size="14" fill="#f8fafc">100+ Cloud Migrations</text>
+    <text x="56" y="45" class="font-regular" font-size="11.5" fill="#94a3b8">Discovery &#x2022; Cutover &#x2022; Hypercare</text>
+  </g>
+
+  <!-- Capability Cards: Row 2 -->
+  <!-- Card 4: Zero-Trust Security -->
+  <g transform="translate(80, 314)">
+    <rect width="325" height="58" rx="12" fill="#0c1424" fill-opacity="0.9" stroke="#1e293b" stroke-width="1.2"/>
+    <rect width="325" height="58" rx="12" fill="none" stroke="#f43f5e" stroke-width="1" stroke-opacity="0.4"/>
+    <!-- Shield Icon -->
+    <g transform="translate(16, 17)">
+      <path d="M12 2L4 5v6.09c0 5.05 3.41 9.76 8 10.91 4.59-1.15 8-5.86 8-10.91V5l-8-3zm-1 14.5l-4-4 1.41-1.41L11 13.67l6.59-6.59L19 8.5l-8 8z" fill="#f43f5e"/>
+    </g>
+    <text x="56" y="26" class="font-semibold" font-size="14" fill="#f8fafc">Zero-Trust &amp; Entra ID</text>
+    <text x="56" y="45" class="font-regular" font-size="11.5" fill="#94a3b8">RBAC &#x2022; UDR Firewalls &#x2022; Defender</text>
+  </g>
+
+  <!-- Card 5: FinOps & Cost Optimization -->
+  <g transform="translate(438, 314)">
+    <rect width="325" height="58" rx="12" fill="#0c1424" fill-opacity="0.9" stroke="#1e293b" stroke-width="1.2"/>
+    <rect width="325" height="58" rx="12" fill="none" stroke="#f59e0b" stroke-width="1" stroke-opacity="0.4"/>
+    <!-- Trending / FinOps Icon -->
+    <g transform="translate(16, 17)">
+      <path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6h-6z" fill="#fbbf24"/>
+    </g>
+    <text x="56" y="26" class="font-semibold" font-size="14" fill="#f8fafc">FinOps &amp; Cost Optimization</text>
+    <text x="56" y="45" class="font-regular" font-size="11.5" fill="#94a3b8">Reserved Instances &#x2022; Idle Audits</text>
+  </g>
+
+  <!-- Card 6: Techno-Functional & Vendor Lead -->
+  <g transform="translate(795, 314)">
+    <rect width="325" height="58" rx="12" fill="#0c1424" fill-opacity="0.9" stroke="#1e293b" stroke-width="1.2"/>
+    <rect width="325" height="58" rx="12" fill="none" stroke="#6366f1" stroke-width="1" stroke-opacity="0.4"/>
+    <!-- Leadership / Briefcase Icon -->
+    <g transform="translate(16, 17)">
+      <path d="M20 6h-4V4c0-1.11-.89-2-2-2h-4c-1.11 0-2 .89-2 2v2H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-6 0h-4V4h4v2z" fill="#818cf8"/>
+    </g>
+    <text x="56" y="26" class="font-semibold" font-size="14" fill="#f8fafc">Techno-Functional &amp; PreSales</text>
+    <text x="56" y="45" class="font-regular" font-size="11.5" fill="#94a3b8">SOW &#x2022; RFP &#x2022; RACI &#x2022; Vendor Governance</text>
+  </g>
+
+  <!-- Bottom Glowing Gradient Line -->
+  <rect x="3" y="414" width="1194" height="3" rx="1.5" fill="url(#accentLine)"/>
+</svg>
